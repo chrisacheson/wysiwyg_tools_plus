@@ -1,5 +1,5 @@
 ;$Id;
-;
+;;
 name =  WYSIWYG Tools Plus
 description = Special plugins for Wysiwyg module and CKEditor to allow creation of Tabbed and Accodian type items in content creation
 
