@@ -1,7 +1,7 @@
 /**
  * @file: tab_builder.js
  * 
- * take the html markup for ready.gov tabbed/accordion body
+ * take the html markup for tabbed/accordion body
  * content and convert to the desired presentation.
  * 
  * we'll have to rework the markup structure first and then,
