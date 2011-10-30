@@ -1,4 +1,4 @@
-/** base css for tabs **/
+/** base default css for tabs **/
 
 ul.ready-tabs li {
 	list-style:none;
@@ -31,3 +31,21 @@ ul.ready-tabs a:hover {
 	border-top:solid 1px #ccc;
 }
 
+/** base default styles for accordions **/
+.acc-head {
+	margin: 10px;
+}
+
+.acc-head .collapsed{
+     background: url("../../../../../../misc/menu-collapsed.png") no-repeat;
+    padding: 0 0 0 10px;
+}
+
+.acc-head .expanded {
+        background: url("../../../../../../misc/menu-expanded.png") no-repeat;
+    padding: 0 0 0 10px; 
+}
+
+div.ready-accordion {
+	margin: 0 20px 20px 20px;
+}

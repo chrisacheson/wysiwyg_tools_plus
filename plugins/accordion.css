@@ -7,9 +7,13 @@ div.ready-accordion {
   border-radius: 10px;
 }
 
-div.ready-accordion h5.ready-accordion-header {
-	border: dotted 1px #999;
-  border-left: 0;
-  border-right: 0;
-  padding: 5px 0px 5px 24px;
+div.ready-accordion span.ready-accordion-header {
+	color: #597F2B;
+	border: solid 1px #999;
+  font-weight: normal;
+  -moz-border-radius: 10px;
+  -webkit-border-radius: 10px;
+  border-radius: 10px;
+
+  padding: 3px 3px 3px 3px;
 }

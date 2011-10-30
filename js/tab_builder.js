@@ -53,22 +53,25 @@
 	
 	Drupal.behaviors.wysiwyg_tools_plus_theme_initPage = {
 		attach:function (context) {
-			$('.ready-accordion').hide();
+			$('.ready-accordion', context).hide();
+			$('.acc-head', context).children('span').addClass('collapsed');
 			// set the click events
-			$('.ready-tabs a').click(function (event) {
+			$('.ready-tabs a', context).click(function (event) {
 				idClicked = this.id;
 				wysiwyg_tools_plus_theme_toggleTabContent(idClicked);
 			});
 
-			$('.acc-head').click(function (event) {
+			$('.acc-head', context).click(function (event) {
 				idClicked = this.id;
 				wysiwyg_tools_plus_theme_toggleAccordionContent(idClicked);
 
         // attach an active class to active accordion heads
-        if ($(this).parent('li').hasClass("active")) {
-          $(this).parent('li').removeClass("active");
+        if ($(this).children('span').hasClass("expanded")) {
+          $(this).children('span').removeClass("expanded");
+					$(this).children('span').addClass("collapsed");
         } else {
-          $(this).parent('li').addClass("active");
+          $(this).children('span').addClass("expanded");
+					$(this).children('span').removeClass("collapsed");
         }
 
 			});
