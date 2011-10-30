@@ -15,7 +15,7 @@
 		attach:function (context) {
 			//tabbed elements first
 			// for each of the div's apply an id to each
-			$('.ready-tabber').each(function (index) {
+			$('.ready-tabber', context).each(function (index) {
 
 				// a couple of opening set-ups for first run.
 				if (index == 0) {
@@ -31,6 +31,7 @@
 				// move the header element to the ul as a li
 				$(this).children('li').appendTo('ul.ready-tabs');
 			});
+			$('.ready-tabs', context).after('<br clear="all" />');
 		}
 	}
 	
@@ -64,10 +65,10 @@
 				wysiwyg_tools_plus_theme_toggleAccordionContent(idClicked);
 
         // attach an active class to active accordion heads
-        if ($(this).hasClass("active")) {
-          $(this).removeClass("active");
+        if ($(this).parent('li').hasClass("active")) {
+          $(this).parent('li').removeClass("active");
         } else {
-          $(this).addClass("active");
+          $(this).parent('li').addClass("active");
         }
 
 			});
@@ -83,13 +84,13 @@
 		$('.ready-tabber').each(function (index) {
 			if (this.id == "content-" + eventId) {
 				// set the link as active
-				$('.ready-tabs #tab-' + eventId).addClass('active');
+				$('.ready-tabs #tab-' + eventId).parent('li').addClass('active');
 				// expose active content
 				$(this).show();
 			}
 			else {
 				//unset active class from non-event links
-				$('.ready-tabs #tab-' + index).removeClass('active');
+				$('.ready-tabs #tab-' + index).parent('li').removeClass('active');
 				//hide unactive content
 				$(this).hide();
 			}
