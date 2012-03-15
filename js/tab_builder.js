@@ -104,7 +104,7 @@
 	 * Toggle the visibility of the accordion content
 	 */
 	function wysiwyg_tools_plus_theme_toggleAccordionContent(eventId) {
-		eventId = eventId.substring(eventId.length-1, eventId.length);
+		eventId = eventId.substring(eventId.lastIndexOf('-')+1, eventId.length);
 		$('#acc-' + eventId).toggle('fast');
 	}
 	
