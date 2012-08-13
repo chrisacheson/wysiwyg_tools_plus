@@ -1,0 +1,36 @@
+.twoPaneToggle {
+    border: dotted 1px;
+}
+
+/* clearfix */
+.twoPaneToggle:after {
+    content: " ";
+    clear: both;
+    display: block;
+}
+
+.twoPaneToggle .twoPaneToggle-toc {
+    float: left;
+    width: 200px;
+    padding: 10px;
+    margin-right: -220px;
+    position: relative;
+}
+
+.twoPaneToggle .twoPaneToggle-toc:before {
+    content: "TOC Width: ";
+}
+
+.twoPaneToggle .twoPaneToggle-toc:after {
+    content: "px";
+}
+
+.twoPaneToggle .twoPaneToggle-content {
+    float: left;
+    width: 100%;
+}
+
+.twoPaneToggle .twoPaneToggle-content .twoPaneToggle-contentInner {
+    margin-left: 220px;
+    border-left: dotted 1px;
+}

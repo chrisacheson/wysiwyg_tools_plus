@@ -58,5 +58,19 @@ function wysiwyg_tools_plus_tabber_plugin() {
 			'internal' => FALSE,
 			'settings' => array(),
 		),
+                'twoPaneToggle' => array(
+                    'path' => drupal_get_path('module', 'wysiwyg_tools_plus') . '/plugins',
+                    'js file' => 'twoPaneToggle.js',
+                    'js path' => drupal_get_path('module', 'wysiwyg_tools_plus') . '/plugins',
+                    'css path' => drupal_get_path('module', 'wysiwyg_tools_plus') . '/plugins',
+                    'css file' => 'twoPaneToggle.css',
+                    'icon title' => 'Two-Pane Toggle',
+                    'icon path' => drupal_get_path('module', 'wysiwyg_tools_plus') . '/plugins/icons',
+                    'icon file' => 'twoPaneToggle.png',
+                    'buttons' => array('twoPaneToggle' => t('Two-Pane Toggle')),
+                    'load' => TRUE,
+                    'internal' => FALSE,
+                    'settings' => array(),
+                ),
 	);
 }

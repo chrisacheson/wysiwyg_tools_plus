@@ -50,6 +50,58 @@
 
 		}
 	}
+
+    Drupal.behaviors.wysiwyg_tools_plus_theme_createTwoPaneToggles = {
+        attach: function(context) {
+            $('.twoPaneToggle', context).each(function(i) {
+                var twoPaneToggle = $(this);
+                var tableOfContents = twoPaneToggle.find('.twoPaneToggle-toc');
+                var tocWidth = parseInt(tableOfContents.html(), 10);
+                tableOfContents.html('');
+
+                if(tocWidth === NaN || tocWidth < 10) {
+                    tocWidth = 200; // Default width
+                }
+
+                var tocPadding = 10;
+
+                tableOfContents.css({
+                    'width': tocWidth + 'px'
+                    , 'padding': tocPadding + 'px'
+                    , 'margin-right': '-' + (tocPadding * 2 + tocWidth) + 'px'
+                });
+
+                var tocList = $('<ul />').appendTo(tableOfContents);
+                var contentInner = twoPaneToggle
+                    .find('.twoPaneToggle-content .twoPaneToggle-contentInner')
+                    ;
+                contentInner.css('margin-left', (tocPadding * 2 + tocWidth) + 'px');
+
+                var headerTags = 'h1, h2, h3, h4, h5, h6';
+                var contentHeaders = contentInner.children(headerTags);
+
+                contentHeaders.each(function(j) {
+                    var header = $(this);
+                    var itemID = 'twoPaneToggle-contentItem-' + i + '-' + j;
+                    var tocItem = $('<li class="twoPaneToggle-tocItem" />').appendTo(tocList);
+                    var tocLink = $('<a href="#" rel="' + itemID + '">' + header.html() + '</a>')
+                        .appendTo(tocItem)
+                        ;
+                    var contentItem = $(
+                        '<div id="' + itemID + '" class="twoPaneToggle-contentItem" />'
+                    ).hide();
+                    header.add(header.nextUntil(headerTags)).wrapAll(contentItem);
+                });
+
+                tocList.find('a').click(function(e) {
+                    e.preventDefault();
+                    var itemID = $(this).attr('rel');
+                    var contentItem = $('#' + itemID);
+                    contentItem.toggle('fast');
+                });
+            });
+        }
+    };
 	
 	Drupal.behaviors.wysiwyg_tools_plus_theme_initPage = {
 		attach:function (context) {

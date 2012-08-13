@@ -49,3 +49,39 @@ ul.ready-tabs a:hover {
 div.ready-accordion {
 	margin: 0 20px 20px 20px;
 }
+
+/* two-pane toggle */
+
+.twoPaneToggle:after {
+    content: " ";
+    clear: both;
+    display: block;
+}
+
+.twoPaneToggle .twoPaneToggle-toc {
+    float: left;
+    position: relative;
+    /* width, padding, and margin-right are set in /js/tab_builder.js */
+}
+
+.twoPaneToggle .twoPaneToggle-toc ul {
+    padding: 0px;
+}
+
+.twoPaneToggle .twoPaneToggle-toc .twoPaneToggle-tocItem {
+    list-style: none;
+}
+
+.twoPaneToggle .twoPaneToggle-content {
+    float: left;
+    width: 100%;
+}
+
+/* twoPaneToggle-contentInner's margin-left property is set in /js/tab_builder.js */
+
+.twoPaneToggle .twoPaneToggle-content .twoPaneToggle-contentItem {
+    background-color: #f0f0f0;
+    border: 2px solid #eaeaea;
+    padding: 10px;
+    margin-bottom: 10px;
+}
